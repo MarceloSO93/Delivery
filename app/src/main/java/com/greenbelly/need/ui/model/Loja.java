@@ -9,9 +9,9 @@ public class Loja {
     private String telefone;
     private boolean online;
     private CategoriaLoja categoriaLoja;
-    private Usuario responsavel;
+    private Entregador responsavel;
     private Endereco endereco;
-    private List<Usuario> usuarios;
+    private List<Entregador> entregadors;
     private List<Produto> produtos;
     private String logo;
 
@@ -61,11 +61,11 @@ public class Loja {
         this.categoriaLoja = categoriaLoja;
     }
 
-    public Usuario getResponsavel() {
+    public Entregador getResponsavel() {
         return responsavel;
     }
 
-    public void setResponsavel(Usuario responsavel) {
+    public void setResponsavel(Entregador responsavel) {
         this.responsavel = responsavel;
     }
 
@@ -77,12 +77,12 @@ public class Loja {
         this.endereco = endereco;
     }
 
-    public List<Usuario> getUsuarios() {
-        return usuarios;
+    public List<Entregador> getEntregadors() {
+        return entregadors;
     }
 
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public void setEntregadors(List<Entregador> entregadors) {
+        this.entregadors = entregadors;
     }
 
     public List<Produto> getProdutos() {

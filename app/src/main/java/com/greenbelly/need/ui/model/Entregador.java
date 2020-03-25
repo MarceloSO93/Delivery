@@ -2,7 +2,7 @@ package com.greenbelly.need.ui.model;
 
 import com.greenbelly.need.ui.enus.TipoUsuario;
 
-public class Usuario {
+public class Entregador {
 
     private Long id;
     private String nome;

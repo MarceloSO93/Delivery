@@ -4,6 +4,7 @@ package com.greenbelly.need.ui.webapi;
 import com.greenbelly.need.ui.enus.ModalidadeTrabalho;
 import com.greenbelly.need.ui.model.CategoriaLoja;
 import com.greenbelly.need.ui.model.Loja;
+import com.greenbelly.need.ui.model.Pedido;
 import com.greenbelly.need.ui.model.Produto;
 
 import java.security.cert.CertificateException;
@@ -29,7 +30,7 @@ public class API {
     /**
      * URL fixa do portal.
      */
-    public static final String BASE_URL = "https://192.168.0.106:8080/";
+    public static final String BASE_URL = "https://192.168.0.10|zaswq21ZSAW21'zawq211''15:8080/";
     public static Retrofit retrofit;
 
 
@@ -103,7 +104,7 @@ public class API {
 
     public static void getCategoriasLojasProdutos(ModalidadeTrabalho modalidade, Callback< List<CategoriaLoja> > callback) {
         /* Cria o endpoint */
-        CategoriaEndPoint endpoint = getApiClient().create(CategoriaEndPoint.class);
+        EndPoint endpoint = getApiClient().create(EndPoint.class);
 
         // Variavel que armazena o retorno do HTTP:
         Call< List<CategoriaLoja> > call;
@@ -117,7 +118,7 @@ public class API {
 
     public static void getLojas(Long id, Callback< List<Loja> > callback) {
         /* Cria o endpoint */
-        CategoriaEndPoint endpoint = getApiClient().create(CategoriaEndPoint.class);
+        EndPoint endpoint = getApiClient().create(EndPoint.class);
 
         // Variavel que armazena o retorno do HTTP:
         Call< List<Loja> > call;
@@ -131,7 +132,7 @@ public class API {
 
     public static void getProdutosByLoja(Long id, Callback< List<Produto> > callback) {
         /* Cria o endpoint */
-        CategoriaEndPoint endpoint = getApiClient().create(CategoriaEndPoint.class);
+        EndPoint endpoint = getApiClient().create(EndPoint.class);
 
         // Variavel que armazena o retorno do HTTP:
         Call< List<Produto> > call;
@@ -145,7 +146,7 @@ public class API {
 
     public static void getProdutosById(Long id, Callback< Produto > callback) {
         /* Cria o endpoint */
-        CategoriaEndPoint endpoint = getApiClient().create(CategoriaEndPoint.class);
+        EndPoint endpoint = getApiClient().create(EndPoint.class);
 
         // Variavel que armazena o retorno do HTTP:
         Call< Produto > call;
@@ -157,7 +158,7 @@ public class API {
 
     public static void getCategoriasLojasServicos(Callback< List<CategoriaLoja> > callback) {
         /* Cria o endpoint */
-        CategoriaEndPoint endpoint = getApiClient().create(CategoriaEndPoint.class);
+        EndPoint endpoint = getApiClient().create(EndPoint.class);
 
         // Variavel que armazena o retorno do HTTP:
         Call< List<CategoriaLoja> > call;
@@ -168,6 +169,22 @@ public class API {
         call = endpoint.getCategoriasLojas(param);
         call.enqueue(callback);
     }
+
+    public static void gravarPedido(Pedido pedido, Callback<Pedido> callback) {
+        EndPoint endpoint = retrofit.create(EndPoint.class);
+
+        // Variavel que armazena o retorno do HTTP:
+        Call<Pedido> call;
+
+        HashMap<String, Pedido> param = new HashMap();
+        param.put("pedido", pedido);
+
+        /* Faz a chamada a utl, conforme tipo de registro. */
+        call = endpoint.gravarPedido(param);
+        call.enqueue(callback);
+    }
+
+
 
 //    public static void getProdutos(Callback< List<Produto> > callback) {
 //        /* Cria o endpoint */

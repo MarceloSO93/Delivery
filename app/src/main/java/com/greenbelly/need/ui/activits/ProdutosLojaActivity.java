@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.greenbelly.need.R;
 import com.greenbelly.need.ui.adapters.ReciclerViewProdutosLojaAdapter;
+import com.greenbelly.need.ui.model.Pedido;
 import com.greenbelly.need.ui.model.Produto;
 import com.greenbelly.need.ui.services.ProdutosService;
 import com.greenbelly.need.ui.webapi.SimpleCallback;
@@ -24,6 +25,9 @@ public class ProdutosLojaActivity extends AppCompatActivity {
     private static ReciclerViewProdutosLojaAdapter reciclerViewProdutosLojaAdapter;
     private List<Produto> produtos = new ArrayList<>();
     private Long lojaId;
+
+    private Pedido pedido;
+    private List<Produto> produtosSelecionados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
